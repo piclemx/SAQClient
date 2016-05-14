@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "prestart": "npm install",
-    "start": "node node_modules/http-server/bin/http-server -p 8080 -a localhost -o"
+    "start": "node node_modules/http-server/bin/http-server -p 8080 -a localhost -o -d"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,14 @@
     "backbone": "^1.2.3",
     "bootstrap": "^3.3.6",
     "crypto-js": "3.1.6",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
     "fancybox": "^3.0.0",
     "jquery": "^2.2.0",
     "jquery-highlight": "^3.3.0",
     "jquery.cookie": "^1.4.1",
+    "lil-uri": "^0.2.1",
+    "morgan": "^1.7.0",
     "requirejs": "^2.1.22",
     "slick-carousel": "^1.5.9",
     "text": "github:requirejs/text",

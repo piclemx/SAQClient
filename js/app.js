@@ -39,21 +39,27 @@ requirejs.config({
         underscore: 'node_modules/underscore/underscore',
         backbone: 'node_modules/backbone/backbone',
         text: 'node_modules/text/text',
+        uri: 'node_modules/lil-uri/uri.min'
     }
 });
 
 require(
-    ['jquery', 'backbone', 'js/router'],
-    function ($, Backbone, Router) {
-        $.ajaxSetup({
-            data: { "access_token": "6318103b-f9da-437c-854b-9e6f1f44e27b" }
-        });
-
+    ['jquery', 'backbone', 'js/router','uri', 'underscore'],
+    function ($, Backbone, Router,uri,_) {
         $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
             if (!originalOptions.url.match('^js/templates')) {
-                options.url = 'https://cloudplatform.coveo.com/rest' + options.url;
+                var url  = uri(options.url);
+                var p = _.isEmpty(url.search()) ? '?' : '&'
+                options.url = uri()
+                    .path('https://cloudplatform.coveo.com/rest' + url.build() + p + 'access_token=6318103b-f9da-437c-854b-9e6f1f44e27b')
+                    .build();
             }
+            options.crossDomain ={
+                crossDomain: true
+            };
         });
+
+
         Backbone.View.prototype.destroyView = function () {
             this.undelegateEvents();
             this.$el.empty();

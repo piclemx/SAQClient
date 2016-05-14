@@ -1,9 +1,11 @@
 define(
     [
         'backbone',
-        'js/views/MenuView'
+        'js/views/MenuView',
+        'js/views/LeftNavbars',
+        'js/collections/SearchCollection'
     ],
-    function (Backbone,MenuView) {
+    function (Backbone,MenuView,LeftNavbars, SearchCollection) {
         var Router = Backbone.Router.extend({
             routes: {
             },
@@ -25,6 +27,13 @@ define(
             var router = new Router();
             Backbone.history.start();
             MenuView.render();
+            LeftNavbars.render();
+            var collection = new SearchCollection();
+
+            collection.fetch().done(function (data) {
+                console.log(data);  
+                console.log(collection);
+            });
         };
 
         return {

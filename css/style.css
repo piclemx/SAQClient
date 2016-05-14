@@ -98,3 +98,16 @@
         width: 20%;
     }
 }
+
+
+.fixed {
+    height:400px;
+    overflow:hidden;
+    background:orange;
+}
+
+.scrollit {
+    height:400px;
+    overflow-y:scroll;
+    background:lightgray;
+}

@@ -1,59 +1,8 @@
-.to-Show {
-    display: none;
-}
-
-.gravatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
-}
-
 #menu-search-bar {
     float: none;
 }
-
-.navbar-toggle {
-    margin-top: 18px;
-}
-
-.multiple-items img {
-    max-width: 100%;
-    width: 200px;
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    z-index: 0;
-}
-
 .panel-heading h3 {
     text-align: center;
-}
-
-.slick-prev:before {
-    color: #337ab7;
-}
-
-.slick-next:before {
-    color: #337ab7;
-}
-
-.slick-prev {
-    z-index: 10;
-    left: 1%;
-}
-
-.slick-next {
-    z-index: 10;
-    right: 1%;
-}
-
-.section-titles {
-    display: inline-block;
-}
-
-.section_container {
-    display: inline-block;
-    width: 80%;
 }
 
 .loader {
@@ -101,12 +50,8 @@
     }
 }
 
-.genres > label {
-    margin: 0 5px 0 5px;
-}
 
 #menu-navbar {
-    background-color: #3F3F3F;
     margin-bottom: 0;
     line-height: 70px;
 }
@@ -117,7 +62,7 @@
 
 #main-title {
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
 }
 
@@ -127,7 +72,11 @@
     }
 
     #main-title {
-        margin-left: 15px;
+        margin-left: 10px;
+    }
+
+    #search-menu {
+        min-width: 100px;
     }
 }
 
@@ -141,190 +90,11 @@
     .navbar-nav {
         width: 80%;
     }
+    #search-menu {
+        max-width: 750px;
+    }
 
     .navbar-header {
         width: 20%;
     }
-}
-
-@media (min-width: 992px) {
-    #main-title {
-        font-size: 36px;
-    }
-}
-
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
-    display: none;
-}
-
-.tab-content > .active,
-.pill-content > .active {
-    display: block;
-}
-
-.tabs-left > .nav-tabs > li {
-    float: none;
-}
-
-.tabs-left > .nav-tabs > li > a {
-    min-width: 74px;
-    margin-right: 0;
-    margin-bottom: 3px;
-}
-
-.tabs-left > .nav-tabs {
-    float: left;
-    margin-right: 19px;
-    border-right: 1px solid #ddd;
-}
-
-.tabs-left > .nav-tabs > li > a {
-    margin-right: -1px;
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-}
-
-.tabs-left > .nav-tabs > li > a:hover,
-.tabs-left > .nav-tabs > li > a:focus {
-    border-color: #eeeeee #dddddd #eeeeee #eeeeee;
-}
-
-.tabs-left > .nav-tabs .active > a,
-.tabs-left > .nav-tabs .active > a:hover,
-.tabs-left > .nav-tabs .active > a:focus {
-    border-color: #ddd transparent #ddd #ddd;
-    *border-right-color: #ffffff;
-}
-
-.carousel {
-    height: 500px;
-    margin-bottom: 30px;
-}
-
-.carousel-caption {
-    z-index: 10;
-}
-
-.carousel .item {
-    height: 500px;
-    background-color: #777;
-}
-
-.carousel-inner > .item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
-}
-
-.slide {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.movies {
-    text-align: center;
-}
-
-.movie-card {
-    display: inline-block;
-    text-align: center;
-}
-
-.edit {
-    display: none;
-}
-
-.watchlists-button {
-    float: right;
-}
-
-.get-it-on-itunes {
-    display: inline-block;
-    overflow: hidden;
-    background: url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
-    width: 165px;
-    height: 40px;
-}
-
-.user-thumbnail {
-    border-radius: 25px;
-    border: 10px solid #ddd;
-}
-
-@media only screen and (min-width: 1200px) {
-    .carousel {
-        height: 650px;
-        margin-bottom: 30px;
-    }
-
-    .carousel-caption {
-        z-index: 10;
-    }
-
-    .carousel .item {
-        height: 650px;
-        background-color: #777;
-    }
-
-    .carousel-inner > .item > img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        min-width: 100%;
-        height: 650px;
-    }
-}
-
-.search-movie-watchlists {
-    margin-right: 5px;
-}
-
-.search-dropdown-wrapper {
-    width: 100%;
-    position: relative;
-}
-
-.search-dropdown-select {
-    position: absolute;
-    width: 100%;
-    z-index: 100;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid #286090;
-}
-
-#user-menu .search-dropdown-select {
-    top: -15px;
-}
-
-.search-dropdown-option {
-    cursor: pointer;
-    line-height: 40px;
-    padding-left: 10px;
-}
-
-.search-result {
-    line-height: 32px;
-}
-
-.search-result-name {
-    display: inline-block;
-    max-width: 50%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-/* Fix bug between fancybox and bootstrap */
-.fancybox-inner .row {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-.highlight {
-    background-color: #FFFF88;
 }

@@ -111,3 +111,61 @@
     overflow-y:scroll;
     background:lightgray;
 }
+
+.search-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.search-image {
+    position:relative;
+    max-height: 200px;
+    max-width:  100%;
+}
+
+.result
+{
+    position: relative;
+    height: 400px;
+    margin: 0;
+    padding: 5px 5px;
+    border: none;
+    text-align: center;
+}
+
+.thumbnail-result {
+    position: relative;
+    height: 100%;
+}
+
+.search-results {
+    max-width: 100%;
+}
+
+.results {
+    margin-top: 15px;
+}
+
+.left-navbars {
+    margin-top: 15px;
+}
+
+.search-summary {
+    float: left;
+}
+
+.search-sort {
+    float: right;
+}
+
+.search-headers {
+    margin: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.underline {
+    text-decoration: underline;
+}

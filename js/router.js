@@ -1,13 +1,16 @@
 define(
     [
         'backbone',
+        'jquery',
         'js/views/MenuView',
-        'js/views/LeftNavbars',
-        'js/collections/SearchCollection'
+        'js/views/LeftNavbarsView',
+        'js/views/SearchResultsView',
     ],
-    function (Backbone,MenuView,LeftNavbars, SearchCollection) {
+    function (Backbone,$,MenuView,LeftNavbars, SearchResultsView) {
         var Router = Backbone.Router.extend({
             routes: {
+                'search/:query' : 'searchFor',
+                '': 'home'
             },
 
             initializeView: function (View, optionsView, optionsRender) {
@@ -19,7 +22,15 @@ define(
                 this.currentView.render(optionsRender);
             },
             home: function () {
-                //this.initializeView(HomeView);
+                this.searchFor();
+            },
+
+            searchFor: function(query) {
+                var numberOfPage = $('#number-of-page').val();
+                this.initializeView(SearchResultsView,{
+                    query : query,
+                    numberOfPage : numberOfPage
+                },{});
             }
         });
 
@@ -27,13 +38,8 @@ define(
             var router = new Router();
             Backbone.history.start();
             MenuView.render();
-            LeftNavbars.render();
-            var collection = new SearchCollection();
+            router.leftNav = new LeftNavbars();
 
-            collection.fetch().done(function (data) {
-                console.log(data);  
-                console.log(collection);
-            });
         };
 
         return {

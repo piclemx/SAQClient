@@ -39,7 +39,8 @@ requirejs.config({
         underscore: 'node_modules/underscore/underscore',
         backbone: 'node_modules/backbone/backbone',
         text: 'node_modules/text/text',
-        uri: 'node_modules/lil-uri/uri.min'
+        uri: 'node_modules/lil-uri/uri.min',
+        resizeImage: 'node_modules/resize-image/index'
     }
 });
 

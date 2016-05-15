@@ -1,0 +1,13 @@
+<% _.each(entities, function (entity) { %>
+<div>
+    <span>
+    <input type="checkbox" value="<%= entity.attributes.values %>" class="checkbox-<%= name %> checkbox-inline"/>
+    </span>
+    <span>
+    <b><%= entity.attributes.value %></b>
+    </span>
+    <span>
+    <i><small><%= entity.attributes.numberOfResults %></small></i>
+    </span>
+</div>
+<% }); %>

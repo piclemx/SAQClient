@@ -1,0 +1,29 @@
+<div class="thumbnail thumbnail-result">
+    <div class="search-image-container">
+        <img src="<%= raw.tpthumbnailuri %>" alt="<%= raw.tpnomdebouteille %>" class="search-image">
+    </div>
+
+    <div class="caption">
+        <a href="<%= result.clickUri %>"><h4><%= result.title %></h4></a>
+        <p></p>
+        <p>
+        <%
+            var pastilles = _.isUndefined(raw.tppastilledegoutsplitgroup) ? [] : raw.tppastilledegoutsplitgroup.split(';');
+            _.each(pastilles, function (p) {
+                if( p !== '') {
+        %>
+                    <span class="label label-default"><%= p %></span>
+        <%
+                }
+            });
+        %>
+
+            <span class="label label-default"><%= raw.tpcategorie %></span>
+            <span class="label label-default"><%= raw.tpmillesime %></span>
+            <span class="label label-default"><%= raw.tpprixnormal %></span>
+
+        </p>
+
+
+    </div>
+</div>

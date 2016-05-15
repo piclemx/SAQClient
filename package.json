@@ -30,6 +30,7 @@
     "lil-uri": "^0.2.1",
     "morgan": "^1.7.0",
     "requirejs": "^2.1.22",
+    "resize-image": "0.0.4",
     "slick-carousel": "^1.5.9",
     "text": "github:requirejs/text",
     "underscore": "^1.8.3"

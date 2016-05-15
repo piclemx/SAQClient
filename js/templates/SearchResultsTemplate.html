@@ -1,9 +1,28 @@
-<div>
-
+<div class="search-loader loader">
     <div class="search-headers">
         <div class="row">
             <div class="search-summary">
-                Résultat: <span><b><%= totalCountFiltered %></b> en <small><i><%= duration %> millisecondes</i></small></span>
+                Résultats
+                <span>
+                    <b>
+                        <%= currentPageNumber %>
+                    </b>
+                    -
+                    <b class="numberMaxOfPage">
+                        <%= numberMaxOfPage %>
+                    </b>
+                     de
+                </span>
+                <span>
+                    <b>
+                        <%= totalCountFiltered %>
+                    </b> en
+                    <small>
+                        <i>
+                            <%= duration %> millisecondes
+                        </i>
+                    </small>
+                </span>
             </div>
             <div class="search-sort">
                 <span>Millesime</span>
@@ -24,5 +43,14 @@
     </div>
     <div class="row search-results">
 
+    </div>
+
+    <div class="row search-pager">
+        <nav>
+            <ul class="pager">
+                <li><button id="search-previousPage" type="button" class="btn btn-default">Previous</button></li>
+                <li><button id="search-nextPage" type="button" class="btn btn-default">Next</button></li>
+            </ul>
+        </nav>
     </div>
 </div>

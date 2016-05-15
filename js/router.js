@@ -13,24 +13,27 @@ define(
                 '': 'home'
             },
 
-            initializeView: function (View, optionsView, optionsRender) {
-                if (this.currentView) {
-                    this.currentView.destroyView();
+            initializeView: function (View, optionsView, optionsRender,render) {
+                var self = this;
+                if (self.currentView) {
+                    self.currentView.destroyView();
                 }
 
-                this.currentView = new View(optionsView);
-                this.currentView.render(optionsRender);
+                self.currentView = new View(optionsView);
+                if(render){
+                    self.currentView.render(optionsRender);
+                }
             },
             home: function () {
                 this.searchFor();
             },
 
             searchFor: function(query) {
-                var numberOfPage = $('#number-of-page').val();
+                var numberOfResultsByPage = $('#number-of-results-page').val();
                 this.initializeView(SearchResultsView,{
                     query : query,
-                    numberOfPage : numberOfPage
-                },{});
+                    numberOfResultsByPage : numberOfResultsByPage
+                },{},false);
             }
         });
 

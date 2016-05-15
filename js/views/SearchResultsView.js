@@ -17,26 +17,19 @@ define([
             var self = this;
             self.template = _.template(SearchResultsTemplate);
             self.collection = new SearchCollection();
-
-            self.collection.fetch({
-                data: {
-                    q: options.query,
-                    numberOfResults : options.numberOfPage
-                },
-                success: function (data) {
-                    self.collection.duration = data.duration;
-                    self.collection.totalCountFiltered = data.totalCountFiltered;
-                    self.render();
-                }
-            });
+            self.search(options);
         },
 
         render: function () {
             var self = this;
             self.$el.html(self.template({
                 totalCountFiltered: self.collection.totalCountFiltered,
-                duration : self.collection.duration
+                duration : self.collection.duration,
+
             }));
+
+            var numberOfPage = $('#number-of-page').val();
+            $('.numberOfResults-' + numberOfPage).addClass('underline');
 
             self.$results = self.$('.search-results');
             _.each(self.collection.models, function (result) {
@@ -55,6 +48,28 @@ define([
             $('.numberOfResults-' + previous).removeClass('underline');
             $('.numberOfResults-' + numberOfResults).addClass('underline');
 
+            var encodeQuery = encodeURIComponent($('#menu-search-bar').val());
+
+            self.search({
+                query: encodeQuery,
+                numberOfPage : numberOfResults
+            });
+
+        },
+
+        search: function(options) {
+            var self = this;
+            self.collection.fetch({
+                data: {
+                    q: options.query,
+                    numberOfResults : options.numberOfPage
+                },
+                success: function (model, response) {
+                    self.collection.duration = response.duration;
+                    self.collection.totalCountFiltered = response.totalCountFiltered;
+                    self.render();
+                }
+            });
         }
 
     });

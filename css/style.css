@@ -169,3 +169,7 @@
 .underline {
     text-decoration: underline;
 }
+
+.sort-option {
+    padding: 5px;
+}

@@ -74,11 +74,8 @@ define([
             $('.numberOfResults-' + previous).removeClass('underline');
             $('.numberOfResults-' + numberOfResults).addClass('underline');
 
-
-            self.search({
-                query: self.getEncodeQuery(),
-                numberOfResultsByPage : self.$numberOfResultsByPage.val()
-            });
+            var options = self.buildSearchQuery();
+            self.search(options);
 
         },
 
@@ -87,7 +84,7 @@ define([
             self.$('.search-loader').addClass('loader');
             self.collection.fetch({
                 data: {
-                    q: options.query,
+                    q: decodeURIComponent(options.query),
                     numberOfResults : options.numberOfResultsByPage,
                     firstResult : _.isUndefined(options.firstIndex) ? 0 : options.firstIndex,
                     sortCriteria: _.isUndefined(options.sortCriteria) ? "" : options.sortCriteria
@@ -97,6 +94,9 @@ define([
                     self.totalCountFiltered = response.totalCountFiltered;
                     self.render();
                     self.$('.search-loader').removeClass('loader');
+                },
+                error: function (error) {
+                    console.log(error);
                 }
             });
         },
@@ -196,9 +196,9 @@ define([
             self.$sortWith.data('field', options.field);
 
 
-            var options = self.buildSearchQuery();
+            var query = self.buildSearchQuery();
 
-            self.search(options);
+            self.search(query);
 
         },
 
@@ -226,11 +226,6 @@ define([
             return sortCriteria;
 
         }
-
-
-
-
-
     });
 
     return SearchResultsView;

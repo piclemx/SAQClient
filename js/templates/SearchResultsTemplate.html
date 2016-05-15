@@ -50,8 +50,12 @@
     <div class="row search-pager">
         <nav>
             <ul class="pager">
+                <%  if(currentPageNumber > 1) { %>
                 <li><button id="search-previousPage" type="button" class="btn btn-default">Previous</button></li>
+                <%  }
+                    if(currentPageNumber !== numberMaxOfPage) { %>
                 <li><button id="search-nextPage" type="button" class="btn btn-default">Next</button></li>
+                <% } %>
             </ul>
         </nav>
     </div>

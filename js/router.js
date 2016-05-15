@@ -2,11 +2,12 @@ define(
     [
         'backbone',
         'jquery',
+        'underscore',
         'js/views/MenuView',
         'js/views/LeftNavbarsView',
         'js/views/SearchResultsView',
     ],
-    function (Backbone,$,MenuView,LeftNavbars, SearchResultsView) {
+    function (Backbone,$,_,MenuView,LeftNavbars, SearchResultsView) {
         var Router = Backbone.Router.extend({
             routes: {
                 'search/:query' : 'searchFor',
@@ -31,6 +32,7 @@ define(
 
             searchFor: function(query) {
                 var numberOfResultsByPage = $('#number-of-results-page').val();
+                query = _.isNull(query) ? "" : query;
                 this.initializeView(SearchResultsView,{
                     query : query,
                     numberOfResultsByPage : numberOfResultsByPage

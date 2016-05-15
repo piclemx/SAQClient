@@ -12,6 +12,7 @@ define(
             routes: {
                 'search/:query' : 'searchFor',
                 'search/' : 'searchFor',
+                'search/aq/:query' : 'advencedSearch',
                 '': 'home'
             },
 
@@ -37,6 +38,20 @@ define(
                     query : query,
                     numberOfResultsByPage : numberOfResultsByPage
                 },{},false);
+            },
+
+            advencedSearch: function(query) {
+                var numberOfResultsByPage = $('#number-of-results-page').val();
+                var aq = $('#advencedQuery').val();
+                query = _.isNull(query) ? "" : query;
+                aq = _.isNull(aq) ? "" : aq;
+
+                this.initializeView(SearchResultsView,{
+                    query : query,
+                    aq : aq,
+                    numberOfResultsByPage : numberOfResultsByPage
+                },{},false);
+
             }
         });
 
@@ -44,7 +59,7 @@ define(
             var router = new Router();
             Backbone.history.start();
             MenuView.render();
-            router.leftNav = new LeftNavbars();
+            router.LeftNavbars = new LeftNavbars();
 
         };
 

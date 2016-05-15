@@ -1,7 +1,7 @@
 <% _.each(entities, function (entity) { %>
 <div>
     <span>
-    <input type="checkbox" value="<%= entity.attributes.values %>" class="checkbox-<%= name %> checkbox-inline"/>
+    <input type="checkbox" value="<%= entity.attributes.value %>" class="advance-search-checkbox checkbox-<%= name %> checkbox-inline" data-name="<%= name %>"/>
     </span>
     <span>
     <b><%= entity.attributes.value %></b>

@@ -85,6 +85,7 @@ define([
             self.collection.fetch({
                 data: {
                     q: decodeURIComponent(options.query),
+                    aq: _.isUndefined(options.aq) ? "" : options.aq,
                     numberOfResults : options.numberOfResultsByPage,
                     firstResult : _.isUndefined(options.firstIndex) ? 0 : options.firstIndex,
                     sortCriteria: _.isUndefined(options.sortCriteria) ? "" : options.sortCriteria

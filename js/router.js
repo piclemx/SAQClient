@@ -12,7 +12,6 @@ define(
             routes: {
                 'search/:query' : 'searchFor',
                 'search/' : 'searchFor',
-                'search/aq/:query' : 'advencedSearch',
                 '': 'home'
             },
 
@@ -33,16 +32,8 @@ define(
 
             searchFor: function(query) {
                 var numberOfResultsByPage = $('#number-of-results-page').val();
-                query = _.isNull(query) ? "" : query;
-                this.initializeView(SearchResultsView,{
-                    query : query,
-                    numberOfResultsByPage : numberOfResultsByPage
-                },{},false);
-            },
-
-            advencedSearch: function(query) {
-                var numberOfResultsByPage = $('#number-of-results-page').val();
                 var aq = $('#advencedQuery').val();
+
                 query = _.isNull(query) ? "" : query;
                 aq = _.isNull(aq) ? "" : aq;
 
@@ -51,7 +42,6 @@ define(
                     aq : aq,
                     numberOfResultsByPage : numberOfResultsByPage
                 },{},false);
-
             }
         });
 

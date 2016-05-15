@@ -103,7 +103,11 @@ define(
 
                 self.$advencedQuery.val(aq);
 
-                Backbone.history.navigate('/search/'+ queryEncode, {trigger: true});
+                var ret = Backbone.history.navigate('/search/'+ _.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode, {trigger: true, replace: true});
+                if(_.isUndefined(ret)) {
+                    Backbone.history.loadUrl('/search/'+ _.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode);
+                }
+
             }
         });
         return LeftNavbarsView;

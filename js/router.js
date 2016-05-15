@@ -10,6 +10,7 @@ define(
         var Router = Backbone.Router.extend({
             routes: {
                 'search/:query' : 'searchFor',
+                'search/' : 'searchFor',
                 '': 'home'
             },
 

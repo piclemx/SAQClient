@@ -61,6 +61,9 @@ define([
                 var view = new SearchResultView(result);
                 self.$results.append(view.render().el);
             });
+
+            $('.loader-section').removeClass('loader');
+            self.$('.search-container').show();
         },
 
         triggerNumberOfResults: function (ev) {
@@ -81,7 +84,8 @@ define([
 
         search: function(options) {
             var self = this;
-            self.$('.search-loader').addClass('loader');
+            $('.loader-section').addClass('loader');
+            self.$('.search-container').hide();
             self.collection.fetch({
                 data: {
                     q: decodeURIComponent(options.query),
@@ -94,7 +98,6 @@ define([
                     self.duration = response.duration;
                     self.totalCountFiltered = response.totalCountFiltered;
                     self.render();
-                    self.$('.search-loader').removeClass('loader');
                 },
                 error: function (error) {
                     console.log(error);

@@ -33,7 +33,7 @@ require(
         $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
             if (!originalOptions.url.match('^js/templates')) {
                 var url  = uri(options.url);
-                var p = _.isEmpty(url.search()) ? '?' : '&'
+                var p = _.isEmpty(url.search()) ? '?' : '&';
                 options.url = uri()
                     .path('https://cloudplatform.coveo.com/rest' + url.build() + p + 'access_token=6318103b-f9da-437c-854b-9e6f1f44e27b')
                     .build();

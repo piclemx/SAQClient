@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "prestart": "npm install",
-    "start": "node node_modules/http-server/bin/http-server -p 8080 -a localhost -o -d"
+    "start": "gulp "
   },
   "repository": {
     "type": "git",
@@ -20,16 +20,15 @@
   "dependencies": {
     "backbone": "^1.2.3",
     "bootstrap": "^3.3.6",
-    "express": "^4.13.4",
     "jquery": "^2.2.0",
-    "jquery.cookie": "^1.4.1",
     "lil-uri": "^0.2.1",
-    "morgan": "^1.7.0",
     "requirejs": "^2.1.22",
     "text": "github:requirejs/text",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "http-server": "^0.8.5"
+    "gulp": "^3.9.1",
+    "gulp-server-livereload": "^1.7.4",
+    "gulp-webserver": "^0.9.1"
   }
 }

@@ -103,9 +103,9 @@ define(
 
                 self.$advencedQuery.val(aq);
 
-                var ret = Backbone.history.navigate('/search/'+ _.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode, {trigger: true, replace: true});
+                var ret = Backbone.history.navigate('/search/'+ (_.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode), {trigger: true, replace: true});
                 if(_.isUndefined(ret)) {
-                    Backbone.history.loadUrl('/search/'+ _.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode);
+                    Backbone.history.loadUrl('/search/'+ (_.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode));
                 }
 
             }

@@ -15,32 +15,15 @@ requirejs.config({
         },
         jquery: {
             exports: '$'
-        },
-        'jquery.cookie': {
-            deps: ['jquery']
-        },
-        'jquery.fancybox': {
-            deps: ['jquery']
-        },
-        'jquery.highlight': {
-            deps: ['jquery']
-        },
-        slick: {
-            deps: ['jquery']
         }
     },
     paths: {
         jquery: 'node_modules/jquery/dist/jquery',
-        'jquery.cookie': 'node_modules/jquery.cookie/jquery.cookie',
-        'jquery.fancybox': 'node_modules/fancybox/dist/js/jquery.fancybox.pack',
-        'jquery.highlight': 'node_modules/jquery-highlight/jquery.highlight',
-        slick: 'node_modules/slick-carousel/slick/slick.min',
         bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.min',
         underscore: 'node_modules/underscore/underscore',
         backbone: 'node_modules/backbone/backbone',
         text: 'node_modules/text/text',
         uri: 'node_modules/lil-uri/uri.min',
-        resizeImage: 'node_modules/resize-image/index'
     }
 });
 

@@ -104,9 +104,14 @@ define(
 
                 self.$advencedQuery.val(aq);
 
-                var ret = Backbone.history.navigate('/search/'+ (_.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode), {trigger: true, replace: true});
+                var query = (_.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode);
+
+
+                var ret = Backbone.history.navigate('/search/'+ query, {trigger: true});
+
+                // Have to do this, because navigate return undefined and doesn't call the router
                 if(_.isUndefined(ret)) {
-                    Backbone.history.loadUrl('/search/'+ (_.isNull(queryEncode) || _.isUndefined(queryEncode) ? "" : queryEncode));
+                    Backbone.history.loadUrl('/search/'+ query);
                 }
 
             }

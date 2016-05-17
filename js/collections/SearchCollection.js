@@ -1,12 +1,7 @@
 define([
-    'backbone',
-    'underscore',
-    'js/models/SearchModel'
-], function (Backbone, _, SearchModel) {
+    'backbone'
+], function (Backbone) {
         var SearchCollection = Backbone.Collection.extend({
-
-            model: SearchModel,
-
             url: '/search',
 
             parse: function (response) {

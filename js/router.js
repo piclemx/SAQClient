@@ -49,7 +49,7 @@ define(
             var router = new Router();
             Backbone.history.start();
             MenuView.render();
-            router.LeftNavbars = new LeftNavbars();
+            LeftNavbars.render();
 
         };
 

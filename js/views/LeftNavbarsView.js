@@ -28,12 +28,18 @@ define(
                 self.collapseTemplate = _.template(CollapseTemplate);
                 self.collection = new FieldValuesCollection();
                 self.$advencedQuery= $('#advencedQuery');
-                self.render();
                 self.values = {
                     categories :[],
                     country : [],
                     millesimes: []
                 };
+            },
+
+            render: function () {
+                var self = this;
+                this.$el.html(self.template);
+                self.$('.collapse').collapse();
+
                 self.categories = self.collection.fetch({
                     data : {
                         field: '@tpcategorie',
@@ -62,11 +68,6 @@ define(
                         self.renderCollapseSection(data.models, 'millesimes');
                     }
                 });
-            },
-
-            render: function () {
-                this.$el.html(this.template);
-                $('.collapse').collapse();
             },
 
             renderCollapseSection: function (models, name) {
@@ -110,6 +111,6 @@ define(
 
             }
         });
-        return LeftNavbarsView;
+        return new LeftNavbarsView();
     }
 );
